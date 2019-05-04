@@ -1,0 +1,13 @@
+[Unit]
+Description=sd-service-example
+After=syslog.target
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/java -jar /opt/sd-service/sd-service-example.jar
+Restart=on-failure
+RestartSec=5
+SyslogIdentifier=sd-service-example
+
+[Install]
+WantedBy=multi-user.target
